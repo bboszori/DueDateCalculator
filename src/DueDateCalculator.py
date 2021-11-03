@@ -70,7 +70,7 @@ class DueDateCalculator(DueDateCalcAbstract):
                 due_date += timedelta(days=1)
             due_date += timedelta(days=1)
             remaining_minutes -= remaining_from_start_day
-            due_date = datetime(due_date.year, due_date.month, due_date.day, 9, 0)
+            due_date = datetime(due_date.year, due_date.month, due_date.day, self.startHour, 0)
             due_date += timedelta(minutes=remaining_minutes)
 
         return due_date
