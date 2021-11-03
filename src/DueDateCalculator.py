@@ -39,7 +39,7 @@ class DueDateCalculator(DueDateCalcAbstract):
 
     def remainingMinfromDay(self, submit_date):
         """ Returns the remaining minutes till the end of work day """
-        end_of_day = datetime(submit_date.year, submit_date.month, submit_date.day, 17, 0)
+        end_of_day = datetime(submit_date.year, submit_date.month, submit_date.day, self.endHour, 0)
         return (end_of_day - submit_date).seconds // 60
 
     def CalculateDueDate(self, submit_date, turnaround_time):
